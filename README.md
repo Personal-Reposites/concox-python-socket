@@ -2,6 +2,6 @@
 
 ## Running 
 ```
-python socket_hex_input.py
+python server_socket_hex_input.py
 
 ```
