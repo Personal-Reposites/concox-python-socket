@@ -34,7 +34,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
                         # Format it to look like a typical hexadecimal dump with spaces or colons if desired
                         formatted_hex = ' '.join(hex_representation[i:i+2] for i in range(0, len(hex_representation), 2))
 
+                        formatted_hexadecimal = [(hex(int(i, 16))) for i in formatted_hex.split(' ')]
+
+                        print("\n \n Datos Entrantes:")
                         print(formatted_hex)
+                        print(formatted_hexadecimal)
+                        print("\n ")
+
                     else:
                         conn.close()                        
 
@@ -44,8 +50,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
                     print(e)
                     conn.close()
  
-
         server_socket.close()
     except Exception as e:
         print(e)
         print("\n\n\t\t\t\t\t\t\t\t\t\t\t *-* CONNECTION CLOSED *-* ")
+
